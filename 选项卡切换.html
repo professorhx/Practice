@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>实践题 - 选项卡</title>
+    <style type="text/css">
+     /* CSS样式制作 */
+
+     /*1.把整体内容弄到最右上角    2.设置整体内容的字体、大小*/  
+    *{padding:0px;margin: 0px;font:12px normal "microsoft yahei";}
+    /*1.设置整体内容长宽    2.设置内边距padding和外边距margin*/
+    #tabs {width:290px;padding:5px;height:150px;margin:20px;}
+    /*1.取消无序列表ul列表中的列表项目标记  2.设置为块级元素   3.设置高度，行内高度   4.设置下边框的样式*/
+    #tabs ul{list-style:none;display: block;height:30px;line-height:30px;border-bottom:2px saddlebrown solid;}
+    /*1.在定义列表li项下设置背景色    2.设置光标的样式   3.取消li列表中的列表项目标记  4.设置浮动  5.设置高度，设置行内高度   6.设置外边距 7.设置边框线条，取消下边框线条    8.设置为内联对象 9.设置宽度，文本居中*/
+    #tabs ul li{background:#fff;cursor:pointer;float:left;list-style:none;height:28px;line-height:28px;margin:0px 3px;border:1px solid #aaaaaa;border-bottom:none;display:inline-block;width:60px;text-align: center;}
+    /*1.设置“房产”的上边框为红色，下边框为白色*/
+    #tabs ul li.on{border-top:2px solid saddlebrown;border-bottom: 2px solid #fff;}
+    /*1.设置内容高度、行内高度 2.设置边框样式，取消上边框  3.设置内边距*/
+    #tabs div{height:120px;line-height: 25px;border:1px solid #336699;border-top:none;padding:5px;}
+    /*1.不显示内容*/
+    .hide{display: none;}
+    </style>
+    <script type="text/javascript">   
+    // JS实现选项卡切换
+    window.onload = function(){
+             var oTab = document.getElementById("tabs");        //获取ID=tabs值
+             var oUl = oTab.getElementsByTagName("ul")[0];      //获取tabs下ul的第一个标签值
+             var oLis = oUl.getElementsByTagName("li");         //获取ul下li的标签值
+             var oDivs= oTab.getElementsByTagName("div");       //获取div的标签值
+
+             for(var i= 0,len = oLis.length;i<len;i++){            //循环遍历li
+                 oLis[i].index = i;                                //设置起始点
+                 oLis[i].onclick = function() {                    //设置每一个点的点击事件                                 
+                     for(var n= 0;n<len;n++){                      //没被点击的li，将li的class设为空 div的class设为hide
+                         oLis[n].className = "";                   
+                         oDivs[n].className = "hide";
+                     }
+                     this.className = "on";                         //点击中的class改为on
+                     oDivs[this.index].className = "";              //相对应的div的class改为空
+                 }
+             };
+         }
+    
+    </script>
+ 
+</head>
+<body>
+<!-- HTML页面布局 -->
+ <div id="tabs">
+    <ul>
+        <li class="on">房产</li>
+        <li>家居</li>
+        <li>二手房</li>
+    </ul>
+    <div>
+        275万购昌平邻铁三居 总价20万买一居<br>
+        200万内购五环三居 140万安家东三环<br>
+        北京首现零首付楼盘 53万购东5环50平<br>
+        京楼盘直降5000 中信府 公园楼王现房<br>
+    </div>
+    <div class="hide">
+        40平出租屋大改造 美少女的混搭小窝<br>
+        经典清新简欧爱家 90平老房焕发新生<br>
+        新中式的酷色温情 66平撞色活泼家居<br>
+        瓷砖就像选好老婆 卫生间烟道的设计<br>
+
+    </div>
+    <div class="hide">
+        通州豪华3居260万 二环稀缺2居250w甩<br>
+        西3环通透2居290万 130万2居限量抢购<br>
+        黄城根小学学区仅260万 121平70万抛!<br>
+        独家别墅280万 苏州桥2居优惠价248万<br>
+
+    </div>
+</div>
+</body>
+</html>
+
+
+    
+    
+    
+    
+
+
+
+    
+     
+     
+     
+
+：
+
+     
+     
+     
+     
